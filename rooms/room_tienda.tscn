@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://buvj1oaf04utn"]
+
+[ext_resource type="Script" uid="uid://wfmdvff2jneq" path="res://rooms/room_tienda.gd" id="1_erq1c"]
+[ext_resource type="Texture2D" uid="uid://cgcigi4ti6lgl" path="res://texturas/suelo oscuro.png" id="2_73br1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rl68h"]
+size = Vector3(0.7523804, 4, 4.390442)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdcx"]
+size = Vector3(1, 4, 6.407654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y3umb"]
+size = Vector3(1, 4, 4.713745)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r32sb"]
+size = Vector3(20.298912, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vq3m5"]
+size = Vector3(13.974365, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wf7kc"]
+size = Vector3(2.9783173, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2rm1"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yv82f"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4cg4"]
+albedo_texture = ExtResource("2_73br1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwhkg"]
+size = Vector3(1.5814819, 8.996948, 6.875519)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obsrp"]
+size = Vector3(2, 10, 6)
+
+[node name="room_tienda" type="Node3D" unique_id=1650920571]
+script = ExtResource("1_erq1c")
+
+[node name="Barreras Este y Oeste" type="StaticBody3D" parent="." unique_id=1804191235]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_mask = 0
+
+[node name="Barrera Oeste Arriba" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=1188832375]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.875469, 2, -6.408264)
+shape = SubResource("BoxShape3D_rl68h")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barrera Oeste Abajo" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=1363362843]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.735222, 2, 6.815674)
+shape = SubResource("BoxShape3D_rl68h")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barrera Este Arriba" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=2091975286]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.505329, 2, -8.6737995)
+shape = SubResource("BoxShape3D_uvdcx")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barrera Este Abajo" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=834245100]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.49189, 2, 6.3694263)
+shape = SubResource("BoxShape3D_y3umb")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barreras Sur y Norte" type="StaticBody3D" parent="." unique_id=425238928]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_mask = 0
+
+[node name="Barrera Sur Cerrada" type="CollisionShape3D" parent="Barreras Sur y Norte" unique_id=830296253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.809352, 2, 10.481017)
+shape = SubResource("BoxShape3D_r32sb")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
+
+[node name="Barrera Norte izquierda" type="CollisionShape3D" parent="Barreras Sur y Norte" unique_id=1633544243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4871826, 2, -10.509163)
+shape = SubResource("BoxShape3D_vq3m5")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
+
+[node name="Barrera Norte Derecha" type="CollisionShape3D" parent="Barreras Sur y Norte" unique_id=275416330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.491361, 2, -10.49234)
+shape = SubResource("BoxShape3D_wf7kc")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
+
+[node name="Suelo" type="StaticBody3D" parent="." unique_id=1304470021]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo" unique_id=779642940]
+shape = SubResource("BoxShape3D_n2rm1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Suelo" unique_id=1556150652]
+mesh = SubResource("BoxMesh_yv82f")
+surface_material_override/0 = SubResource("StandardMaterial3D_w4cg4")
+
+[node name="salida oeste" type="Area3D" parent="." unique_id=905282767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.167498, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="salida oeste" unique_id=1976111103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29074097, 1.279419, 0.1794281)
+shape = SubResource("BoxShape3D_lwhkg")
+debug_color = Color(14.107606, 0.00026284897, 8.193988, 1)
+
+[node name="salida norte" type="Area3D" parent="." unique_id=147568227]
+transform = Transform3D(-0.030276839, 0, -0.9995415, 0, 1, 0, 0.9995415, 0, -0.030276839, 8.571982, 0, -14.974794)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="salida norte" unique_id=1746310800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29074097, 1.279419, 0.1794281)
+shape = SubResource("BoxShape3D_lwhkg")
+debug_color = Color(14.107606, 0.00026284897, 8.193988, 1)
+
+[node name="salida sur" type="Area3D" parent="." unique_id=237566177]
+transform = Transform3D(-0.030276839, 0, -0.9995415, 0, 1, 0, 0.9995415, 0, -0.030276839, -9.679955, 0, 14.115269)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="salida sur" unique_id=1394188850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29074097, 1.279419, 0.1794281)
+shape = SubResource("BoxShape3D_lwhkg")
+debug_color = Color(14.107606, 0.00026284897, 8.193988, 1)
+
+[node name="salida este" type="Area3D" parent="." unique_id=1914321837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.841, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="salida este" unique_id=1412569677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33063126, 0, 0)
+shape = SubResource("BoxShape3D_obsrp")
+debug_color = Color(0, 0.6, 0, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=867044418]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 18.37343, 0)
+light_color = Color(1, 0, 1, 1)
+light_energy = 8.9
+spot_range = 3038.479
+spot_angle = 61.58
+
+[node name="Marker3D_Pos1" type="Marker3D" parent="." unique_id=1158033027]
+
+[node name="Marker3D_Pos2" type="Marker3D" parent="." unique_id=111777333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.956517, 0, 0)
+
+[node name="Marker3D_Pos3" type="Marker3D" parent="." unique_id=1792092914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.662261, 0, 0)

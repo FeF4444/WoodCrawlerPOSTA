@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ldr7g3kpwycp"]
+
+[ext_resource type="Script" uid="uid://hn4pmt51g4av" path="res://proyectil_arbusto.gd" id="1_dq8tc"]
+[ext_resource type="Texture2D" uid="uid://5h2juywsx70e" path="res://texturas/Espina ataque grande .png" id="2_gkodc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6rlwq"]
+
+[node name="ProyectilArbusto" type="Area3D" unique_id=415172888]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 0, 1, 0)
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_dq8tc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1821739526]
+shape = SubResource("SphereShape3D_6rlwq")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1785901838]
+transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_gkodc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

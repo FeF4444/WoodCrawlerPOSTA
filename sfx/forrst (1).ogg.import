@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ev7mhexnxnpu"
+path="res://.godot/imported/forrst (1).ogg-c781e7f48f72a87e60fbd4af039f8753.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/forrst (1).ogg"
+dest_files=["res://.godot/imported/forrst (1).ogg-c781e7f48f72a87e60fbd4af039f8753.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

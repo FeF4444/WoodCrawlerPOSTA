@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://blpkwup7c5mx6"]
+
+[ext_resource type="Texture2D" uid="uid://cgcigi4ti6lgl" path="res://texturas/suelo oscuro.png" id="1_qu2cd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rl68h"]
+size = Vector3(0.7523804, 4, 4.390442)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdcx"]
+size = Vector3(1, 4, 6.407654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y3umb"]
+size = Vector3(1, 4, 4.713745)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r32sb"]
+size = Vector3(25.793102, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vq3m5"]
+size = Vector3(23.270508, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wf7kc"]
+size = Vector3(2.9783173, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2rm1"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yv82f"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4cg4"]
+albedo_texture = ExtResource("1_qu2cd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwhkg"]
+size = Vector3(1.5814819, 8.996948, 6.875519)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qapjt"]
+size = Vector3(2, 10, 6)
+
+[node name="CuartoBase" type="Node3D" unique_id=1650920571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.365, 0, 0, 0)
+
+[node name="Barreras Este y Oeste" type="StaticBody3D" parent="." unique_id=1804191235]
+transform = Transform3D(2.705, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_mask = 0
+
+[node name="Barrera Oeste Arriba" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=1188832375]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.875469, 2, -6.408264)
+shape = SubResource("BoxShape3D_rl68h")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barrera Oeste Abajo" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=1363362843]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.735222, 2, 6.815674)
+shape = SubResource("BoxShape3D_rl68h")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barrera Este Arriba" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=2091975286]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.505329, 2, -8.6737995)
+shape = SubResource("BoxShape3D_uvdcx")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barrera Este Abajo" type="CollisionShape3D" parent="Barreras Este y Oeste" unique_id=834245100]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.49189, 2, 6.3694263)
+shape = SubResource("BoxShape3D_y3umb")
+debug_color = Color(0.8544813, 1.0877549e-05, 0.5672306, 0.41960785)
+
+[node name="Barreras Sur y Norte" type="StaticBody3D" parent="." unique_id=425238928]
+transform = Transform3D(2.705, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_mask = 0
+
+[node name="Barrera Sur Cerrada" type="CollisionShape3D" parent="Barreras Sur y Norte" unique_id=830296253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 2.7957926, 1.8942032, 10.622379)
+shape = SubResource("BoxShape3D_r32sb")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
+
+[node name="Barrera Norte izquierda" type="CollisionShape3D" parent="Barreras Sur y Norte" unique_id=1633544243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 1.1608887, 2, -10.509165)
+shape = SubResource("BoxShape3D_vq3m5")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
+
+[node name="Barrera Norte Derecha" type="CollisionShape3D" parent="Barreras Sur y Norte" unique_id=275416330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.491361, 2, -10.49234)
+shape = SubResource("BoxShape3D_wf7kc")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
+
+[node name="Suelo" type="StaticBody3D" parent="." unique_id=1304470021]
+transform = Transform3D(2.705, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo" unique_id=779642940]
+shape = SubResource("BoxShape3D_n2rm1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Suelo" unique_id=1556150652]
+mesh = SubResource("BoxMesh_yv82f")
+surface_material_override/0 = SubResource("StandardMaterial3D_w4cg4")
+
+[node name="salida oeste" type="Area3D" parent="." unique_id=905282767]
+transform = Transform3D(2.705, 0, 0, 0, 1, 0, 0, 0, 1, -27.778084, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="salida oeste" unique_id=1976111103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29074097, 1.279419, 0.1794281)
+shape = SubResource("BoxShape3D_lwhkg")
+debug_color = Color(14.107606, 0.00026284897, 8.193988, 1)
+
+[node name="salida este" type="Area3D" parent="." unique_id=1617248670]
+transform = Transform3D(2.705, 0, 0, 0, 1, 0, 0, 0, 1, 28.007782, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="salida este" unique_id=266090739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33063126, 0, 0)
+shape = SubResource("BoxShape3D_qapjt")
+debug_color = Color(0, 0.6, 0, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1414285350]
+transform = Transform3D(6.845, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 18.37343, 0)
+light_energy = 8.9
+light_size = 1.0
+spot_range = 3038.479
+spot_angle = 61.58
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1062684828]
+transform = Transform3D(0.46948355, 0, 0, 0, -9.012657e-08, 1, 0, -2.0618558, -1.8582799e-07, -13.4228945, 18.37343, 0)
+light_energy = 8.9
+light_size = 1.0
+spot_range = 3038.479
+spot_angle = 61.58
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=939176094]
+transform = Transform3D(0.46948352, 0, 0, 0, -1.1975723e-07, 1, 0, -2.7397258, -3.2810198e-07, 10.213516, 18.37343, 0)
+light_energy = 8.9
+light_size = 1.0
+spot_range = 3038.479
+spot_angle = 61.58
+
+[node name="SpawnersEnemigos" type="Node3D" parent="." unique_id=841428836]
+transform = Transform3D(0.86, 0, 0, 0, 0.71, 0, 0, 0, 0.745, 19.934406, 0, -6.1181703)
+
+[node name="Spawn 1" type="Marker3D" parent="SpawnersEnemigos" unique_id=1095999072]
+
+[node name="Spawn 2" type="Marker3D" parent="SpawnersEnemigos" unique_id=979723230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.7975683)
+
+[node name="Spawn 3" type="Marker3D" parent="SpawnersEnemigos" unique_id=841048132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.2005596)
